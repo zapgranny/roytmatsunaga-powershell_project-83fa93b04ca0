@@ -12,29 +12,9 @@ Team B - Project 3: Powershell Scripting
 
 <#
 Gather information about Windows computers on the network
-
+http://blogs.technet.com/b/askds/archive/2010/02/04/inventorying-computers-with-ad-powershell.aspx
 #>
 
-#!/bin/sh
+import-module ActiveDirectory
 
-For (computer computer) {
-
-top
-ps -Af
- ps -u username –Af
- free –m
- fdisk -l (as root)
- df -hT
- cat  /etc/fstab
- du -h --max-depth=1
- uname -a
- cat /proc/cpuinfo
- cat /proc/version
- ifconfig -a	
- }
-
-<#Format this cleanly!	
-/lscpu?
-/uname –all
-/Do echos, *, etc.
-#>
+Get-Help Get-ADComputer -Full
