@@ -26,3 +26,14 @@ o	You can create a test environment using the VMs you have setup for this class;
 
 #>
 
+Get-WmiObject -Class Win32_Desktop -ComputerName .
+
+Get-WmiObject -Class Win32_BIOS -ComputerName .
+
+Get-WmiObject -Class Win32_Processor -ComputerName . | Select-Object -Property [a-z]*
+Get-WmiObject -Class Win32_ComputerSystem -ComputerName . 
+Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property Build*,OSType,ServicePack*
+Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" -ComputerName .
+Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
+Get-WmiObject -Class Win32_ComputerSystem -Property UserName -ComputerName .
+Get-WmiObject -Class Win32_Service -ComputerName . | Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap
