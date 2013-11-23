@@ -37,3 +37,4 @@ Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" -ComputerName .
 Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 Get-WmiObject -Class Win32_ComputerSystem -Property UserName -ComputerName .
 Get-WmiObject -Class Win32_Service -ComputerName . | Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap
+
